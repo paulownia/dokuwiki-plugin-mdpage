@@ -97,7 +97,7 @@ trait MarkdownRendererTrait {
     protected function renderHeadline($block) {
         $content = $this->collectText($block['content']);
 
-        $this->renderer->header(html_entity_decode($content), $block['level'], $this->rendererContext['pos']);
+        $this->renderer->header(html_entity_decode($content), $block['level'], $this->rendererContext['pos'] ?? null);
 
         return $this->getRenderResult();
     }
@@ -162,7 +162,7 @@ trait MarkdownRendererTrait {
     // block\ListTrait
 
     protected function renderList($block) {
-        $escapedPos = $this->renderPos;
+        $escapedPos = $this->renderPos;g
 
         if ($block['list'] == 'ol') {
             $this->renderer->listo_open();
