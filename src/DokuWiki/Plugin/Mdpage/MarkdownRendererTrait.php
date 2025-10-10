@@ -225,12 +225,14 @@ trait MarkdownRendererTrait {
                 $first = false;
 
                 $this->renderer->tablethead_open();
+                $this->renderer->tablerow_open();
                 foreach ($row as $c => $cell) {
                     $align = empty($cols[$c]) ? null : $cols[$c];
                     $this->renderer->tableheader_open(1, $align);
                     $this->renderAbsy($cell);
                     $this->renderer->tableheader_close();
                 }
+                $this->renderer->tablerow_close();
                 $this->renderer->tablethead_close();
 
                 continue;
