@@ -97,7 +97,7 @@ trait MarkdownRendererTrait {
     protected function renderHeadline($block) {
         $content = $this->collectText($block['content']);
 
-        $this->renderer->header(html_entity_decode($content), $block['level'], $this->rendererContext['pos'] ?? null);
+        $this->renderer->header(html_entity_decode($content), $block['level'], $this->rendererData['pos'] ?? null);
 
         return $this->getRenderResult();
     }
